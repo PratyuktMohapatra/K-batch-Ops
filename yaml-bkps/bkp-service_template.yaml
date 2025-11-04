@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ deployment_name }}-svc
+spec:
+  selector:
+    app: {{ deployment_name }}
+  type: NodePort
+  ports:
+    - name: vnc
+      protocol: TCP
+      port: 5900
+      targetPort: 5900
+      nodePort: {{ vnc_node_port }}
+
+    - name: web
+      protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: {{ web_node_port }}

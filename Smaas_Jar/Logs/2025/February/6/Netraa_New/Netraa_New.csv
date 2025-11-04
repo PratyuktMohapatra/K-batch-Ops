@@ -1,0 +1,7 @@
+Page,ResponseTime,Time,Error,Error Description,Status,SrNO,UserID,Error Screenshot File Location
+Swag Labs,9.11,2025-02-06 11:52:16,Functional Error,Appeared slow in 9.112 Sec & locator not found,FAIL,6537602,sonali.thakur@apmosys.com,/home/apmosys/Desktop/Docker_autoexecution/Smaas_Jar/Logs/2025/February/6/Netraa_New/Swag Labs_11_52_16.png
+Swag Labs,6.31,2025-02-06 11:52:47,Functional Error,Appeared slow in 6.306 Sec & locator not found,FAIL,6537602,sonali.thakur@apmosys.com,/home/apmosys/Desktop/Docker_autoexecution/Smaas_Jar/Logs/2025/February/6/Netraa_New/Swag Labs_11_52_47.png
+Swag Labs,12.60,2025-02-06 11:53:10,Functional Error,Appeared slow in 12.6 Sec & locator not found,FAIL,6537602,sonali.thakur@apmosys.com,/home/apmosys/Desktop/Docker_autoexecution/Smaas_Jar/Logs/2025/February/6/Netraa_New/Swag Labs_11_53_10.png
+Swag Labs,10.06,2025-02-06 12:27:15,Functional Error,Appeared slow in 10.055 Sec & locator not found,FAIL,6537610,sonali.thakur@apmosys.com,/home/apmosys/Desktop/Docker_autoexecution/Smaas_Jar/Logs/2025/February/6/Netraa_New/Swag Labs_12_27_15.png
+Swag Labs,6.34,2025-02-06 12:27:46,Functional Error,Appeared slow in 6.343 Sec & locator not found,FAIL,6537610,sonali.thakur@apmosys.com,/home/apmosys/Desktop/Docker_autoexecution/Smaas_Jar/Logs/2025/February/6/Netraa_New/Swag Labs_12_27_46.png
+Swag Labs,12.84,2025-02-06 12:28:09,Functional Error,Appeared slow in 12.842 Sec & locator not found,FAIL,6537610,sonali.thakur@apmosys.com,/home/apmosys/Desktop/Docker_autoexecution/Smaas_Jar/Logs/2025/February/6/Netraa_New/Swag Labs_12_28_9.png

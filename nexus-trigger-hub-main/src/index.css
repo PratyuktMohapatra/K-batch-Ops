@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Cyberpunk Dark Theme - Base */
+    --background: 216 12% 7%;  /* Deep charcoal #101214 */
+    --foreground: 0 0% 100%;   /* Bright white */
+
+    --card: 215 9% 11%;        /* Secondary dark #1C1E22 */
+    --card-foreground: 0 0% 100%;
+
+    --popover: 215 9% 11%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Primary Accent - Vibrant Purple */
+    --primary: 260 72% 57%;    /* #6A3DE8 */
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Ghost style */
+    --secondary: 215 9% 11%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted text and backgrounds */
+    --muted: 215 9% 15%;
+    --muted-foreground: 0 0% 69%;  /* Light gray #B0B0B0 */
+
+    /* Accent - Neon Green for highlights */
+    --accent: 165 100% 50%;    /* #00FFC3 */
+    --accent-foreground: 216 12% 7%;
+
+    /* Tertiary - Digital Blue for data */
+    --tertiary: 217 75% 56%;   /* #2F80ED */
+    --tertiary-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 9% 15%;
+    --input: 215 9% 15%;
+    --ring: 260 72% 57%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens for glow effects */
+    --glow-primary: 260 72% 57% / 0.5;
+    --glow-accent: 165 100% 50% / 0.5;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Custom scrollbar for dark theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/50;
+  }
+}
+

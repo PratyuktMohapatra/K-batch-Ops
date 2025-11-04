@@ -1,0 +1,68 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ deployment_name }}
+spec:
+  ttlSecondsAfterFinished: 1
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: {{ deployment_name }}
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: auto-container
+          image: pratyukt247/k8s-netraa-image
+          env:
+            - name: CLIENT_ID
+              value: "{{ client_id }}"
+            - name: FREQUENCY
+              value: "{{ frequency }}"
+            - name: BATCH_ID
+              value: "{{ batch_id }}"
+            - name: DISPLAY
+              value: ":1"
+          volumeMounts:
+            - name: java19
+              mountPath: /home/ubuntu/jdk-19
+              readOnly: true
+            - name: smaas-jar
+              mountPath: /home/ubuntu/Smaas_Jar
+              readOnly: true
+          command: ["/bin/bash", "-c"]
+          args:
+            - |
+              /startup.sh &
+
+              echo "Waiting for VNC to initialize..."
+              sleep 5
+
+              echo "Running JAR now..."
+              /home/ubuntu/jdk-19/usr/lib/jvm/jdk-19/bin/java -jar /home/ubuntu/Smaas_Jar/framework-api-0.0.1-SNAPSHOT.jar &
+
+              echo "Checking if port 9001 is listening..."
+              sleep 5
+
+              for i in {1..30}; do
+                if ss -tln | grep -q ":9001 "; then
+                  echo "Port 9001 is listening. Calling automation API..."
+                  netstat -tulnp
+                  curl -X GET "http://localhost:9001/automation/execute/${BATCH_ID}/${CLIENT_ID}/${FREQUENCY}"
+                  break
+                else
+                  echo "Port 9001 not open yet. Waiting..."
+                  sleep 2
+                fi
+              done
+
+              wait
+      volumes:
+        - name: java19
+          hostPath:
+            path: /home/ubuntu/jdk-19
+            type: Directory
+        - name: smaas-jar
+          hostPath:
+            path: /home/ubuntu/Smaas_Jar
+            type: Directory

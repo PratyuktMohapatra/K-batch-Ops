@@ -1,0 +1,2 @@
+Page,ResponseTime,Time,Error,Error Description,Status,SrNO,UserID,Error Screenshot File Location
+Swag Labs,9.00,2025-01-30 16:08:57,Functional Error,Appeared slow in 8.996 Sec & locator not found,FAIL,6537254,sonali.thakur@apmosys.com,/home/apmosys/Desktop/Docker_autoexecution/Smaas_Jar/Logs/2025/January/30/Swag_Labs_20/Swag Labs_16_8_57.png

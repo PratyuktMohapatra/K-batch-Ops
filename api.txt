@@ -1,0 +1,10 @@
+to create a single pod -
+
+
+ curl -X POST http://192.168.95.29:5000/run-automation   -H "Content-Type: application/json"   -d '{"client_id": "9", "frequency": "15", "batch_id": "1"}'
+
+
+to create three pods - 
+
+
+curl -X POST http://192.168.95.29:5001/trigger-multiple
